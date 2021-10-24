@@ -1,47 +1,46 @@
 import { Router } from "express"
 import createError from "http-errors"
-import ExampleModel from "./schema.js"
+import FruitModel from "./schema.js"
 
-const examplesRouter = Router()
+const FruitRouter = Router()
 
-examplesRouter.get("/", async (req, res, next) => {
-  try {
-
-  } catch (error) {
-    console.log(error)
-    next(error)
-  }
-})
-
-examplesRouter.get("/:id", async (req, res, next) => {
-  try {
-
-  } catch (error) {
-    next(error)
-  }
-})
-
-examplesRouter.post("/", async (req, res, next) => {
-  try {
-  } catch (error) {
-    next(error)
-  }
-})
-
-examplesRouter.put("/:id", async (req, res, next) => {
-  try {
-
-  } catch (error) {
-    next(error)
-  }
-})
-
-examplesRouter.delete("/:id", async (req, res, next) => {
+FruitRouter.get("/", async(req, res, next) => {
     try {
-    } catch (error) {
-      next(error)
-    }
-  }
-)
+        const fruits = await FruitModel.find()
+        res.send(fruits)
 
-export default examplesRouter
+    } catch (error) {
+        console.log(error)
+        next(error)
+    }
+})
+
+FruitRouter.get("/:id", async(req, res, next) => {
+    try {
+
+    } catch (error) {
+        next(error)
+    }
+})
+
+FruitRouter.post("/", async(req, res, next) => {
+    try {} catch (error) {
+        next(error)
+    }
+})
+
+FruitRouter.put("/:id", async(req, res, next) => {
+    try {
+
+    } catch (error) {
+        next(error)
+    }
+})
+
+FruitRouter.delete("/:id", async(req, res, next) => {
+    try {} catch (error) {
+        next(error)
+    }
+})
+
+export default FruitRouter

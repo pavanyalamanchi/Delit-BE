@@ -2,16 +2,25 @@ import mongoose from "mongoose"
 
 const { Schema, model } = mongoose
 
-const ExampleSchema = new Schema(
-  {
-  /*   name: {
-      type: String,
-      required: true,
-    }, */
-  },
-  {
+const FruitSchema = new Schema({
+    Class_Name: {
+        type: String,
+        required: true,
+    },
+    Fruit_Name: {
+        type: String,
+        required: true,
+    },
+    Image_Path: {
+        type: String,
+        required: true,
+    },
+    Description: {
+        type: String,
+        required: true,
+    }
+}, {
     timestamps: true,
-  }
-)
+})
 
-export default model("Example", ExampleSchema)
+export default model("Fruit", FruitSchema)
